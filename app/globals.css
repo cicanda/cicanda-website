@@ -708,6 +708,17 @@ p { margin: 0; line-height: 1.6; color: var(--c-ink-2); text-wrap: pretty; }
   margin-bottom: 14px;
 }
 
+.form-error {
+  display: flex; align-items: center; gap: 12px;
+  padding: 16px 18px;
+  background: #FEF2F2;
+  border: 1px solid #FECACA;
+  border-radius: var(--r-sm);
+  color: #991B1B;
+  font-size: 14.5px;
+  margin-bottom: 14px;
+}
+
 /* ===== Footer ===== */
 .footer {
   background: var(--c-ink);

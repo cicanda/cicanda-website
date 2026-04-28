@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, type ChangeEvent, type FormEvent } from "react";
+import { useActionState } from "react";
+import { submitContact, type ContactState } from "../_actions/contact";
 import {
   IconCheck,
   IconMail,
@@ -9,31 +10,13 @@ import {
   IconSendPlane,
 } from "./icons";
 
-type FormState = {
-  name: string;
-  email: string;
-  service: string;
-  message: string;
-};
-
-const INITIAL: FormState = { name: "", email: "", service: "", message: "" };
+const INITIAL_STATE: ContactState = { status: "idle" };
 
 export function Contact() {
-  const [form, setForm] = useState<FormState>(INITIAL);
-  const [sent, setSent] = useState(false);
-
-  const set =
-    (k: keyof FormState) =>
-    (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) =>
-      setForm((f) => ({ ...f, [k]: e.target.value }));
-
-  const submit = (e: FormEvent) => {
-    e.preventDefault();
-    if (!form.name || !form.email || !form.message) return;
-    setSent(true);
-    setTimeout(() => setSent(false), 6000);
-    setForm(INITIAL);
-  };
+  const [state, formAction, pending] = useActionState(
+    submitContact,
+    INITIAL_STATE,
+  );
 
   return (
     <section className="section" id="contact">
@@ -53,11 +36,16 @@ export function Contact() {
           </p>
         </div>
         <div className="contact-grid">
-          <form onSubmit={submit}>
-            {sent && (
+          <form action={formAction}>
+            {state.status === "success" && (
               <div className="form-success">
                 <IconCheck size={18} stroke={2.4} />
                 <span>Thanks. Your note is on its way to the team.</span>
+              </div>
+            )}
+            {state.status === "error" && (
+              <div className="form-error" role="alert">
+                <span>{state.message}</span>
               </div>
             )}
             <div className="field__row">
@@ -65,9 +53,8 @@ export function Contact() {
                 <span className="field__label">Your name</span>
                 <input
                   className="field__input"
+                  name="name"
                   placeholder="Jane Adeyemi"
-                  value={form.name}
-                  onChange={set("name")}
                   required
                 />
               </label>
@@ -76,20 +63,15 @@ export function Contact() {
                 <input
                   className="field__input"
                   type="email"
+                  name="email"
                   placeholder="jane@company.com"
-                  value={form.email}
-                  onChange={set("email")}
                   required
                 />
               </label>
             </div>
             <label className="field">
               <span className="field__label">Service of interest</span>
-              <select
-                className="field__select"
-                value={form.service}
-                onChange={set("service")}
-              >
+              <select className="field__select" name="service" defaultValue="">
                 <option value="">Select a service…</option>
                 <option>Information Technology</option>
                 <option>Media &amp; PR</option>
@@ -101,14 +83,13 @@ export function Contact() {
               <span className="field__label">How can we help?</span>
               <textarea
                 className="field__textarea"
+                name="message"
                 placeholder="A few lines about what you're working on, and any timing we should know about."
-                value={form.message}
-                onChange={set("message")}
                 required
               />
             </label>
-            <button type="submit" className="btn btn--primary">
-              Send message <IconSendPlane />
+            <button type="submit" className="btn btn--primary" disabled={pending}>
+              {pending ? "Sending…" : "Send message"} <IconSendPlane />
             </button>
           </form>
           <aside className="contact-card">
@@ -154,7 +135,7 @@ export function Contact() {
                 <div>
                   <div className="contact-item__label">Email</div>
                   <div className="contact-item__value">
-                    <a href="mailto:info@cicanda.com">info@cicanda.com</a>
+                    <a href="mailto:hello@cicanda.com">hello@cicanda.com</a>
                   </div>
                 </div>
               </li>

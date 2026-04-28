@@ -20,9 +20,6 @@ export const metadata: Metadata = {
   title: "CICANDA · Creating reliable solutions",
   description:
     "CICANDA is a Nigerian firm delivering Information Technology, Media & PR, and Reseller partnerships. Creating reliable solutions from Abuja.",
-  icons: {
-    icon: "/cicanda-square.svg",
-  },
 };
 
 export default function RootLayout({
