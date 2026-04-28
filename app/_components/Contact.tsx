@@ -1,7 +1,6 @@
 "use client";
 
-import { useActionState } from "react";
-import { submitContact, type ContactState } from "../_actions/contact";
+import { useRef, useState, type FormEvent } from "react";
 import {
   IconCheck,
   IconMail,
@@ -10,13 +9,65 @@ import {
   IconSendPlane,
 } from "./icons";
 
-const INITIAL_STATE: ContactState = { status: "idle" };
+type Status =
+  | { kind: "idle" }
+  | { kind: "sending" }
+  | { kind: "success" }
+  | { kind: "error"; message: string };
+
+const ACCESS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_KEY;
 
 export function Contact() {
-  const [state, formAction, pending] = useActionState(
-    submitContact,
-    INITIAL_STATE,
-  );
+  const formRef = useRef<HTMLFormElement>(null);
+  const [status, setStatus] = useState<Status>({ kind: "idle" });
+
+  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    if (!ACCESS_KEY) {
+      setStatus({
+        kind: "error",
+        message:
+          "The contact form isn't configured yet. Please email hello@cicanda.com directly.",
+      });
+      return;
+    }
+
+    setStatus({ kind: "sending" });
+
+    const formData = new FormData(e.currentTarget);
+    formData.append("access_key", ACCESS_KEY);
+    formData.append("subject", "New CICANDA contact form submission");
+    formData.append("from_name", "CICANDA Website");
+
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+      const data = (await res.json()) as { success?: boolean; message?: string };
+
+      if (data.success) {
+        setStatus({ kind: "success" });
+        formRef.current?.reset();
+      } else {
+        setStatus({
+          kind: "error",
+          message:
+            data.message ??
+            "We couldn't send your message. Please try again in a moment.",
+        });
+      }
+    } catch {
+      setStatus({
+        kind: "error",
+        message:
+          "We couldn't reach our mail service. Please check your connection and try again.",
+      });
+    }
+  };
+
+  const pending = status.kind === "sending";
 
   return (
     <section className="section" id="contact">
@@ -36,16 +87,16 @@ export function Contact() {
           </p>
         </div>
         <div className="contact-grid">
-          <form action={formAction}>
-            {state.status === "success" && (
+          <form ref={formRef} onSubmit={onSubmit}>
+            {status.kind === "success" && (
               <div className="form-success">
                 <IconCheck size={18} stroke={2.4} />
                 <span>Thanks. Your note is on its way to the team.</span>
               </div>
             )}
-            {state.status === "error" && (
+            {status.kind === "error" && (
               <div className="form-error" role="alert">
-                <span>{state.message}</span>
+                <span>{status.message}</span>
               </div>
             )}
             <div className="field__row">
