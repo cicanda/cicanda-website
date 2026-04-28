@@ -15,7 +15,8 @@ type Status =
   | { kind: "success" }
   | { kind: "error"; message: string };
 
-const ACCESS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_KEY;
+const ACCESS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_KEY ?? "";
+const ENDPOINT = "https://api.web3forms.com/submit";
 
 export function Contact() {
   const formRef = useRef<HTMLFormElement>(null);
@@ -35,15 +36,10 @@ export function Contact() {
 
     setStatus({ kind: "sending" });
 
-    const formData = new FormData(e.currentTarget);
-    formData.append("access_key", ACCESS_KEY);
-    formData.append("subject", "New CICANDA contact form submission");
-    formData.append("from_name", "CICANDA Website");
-
     try {
-      const res = await fetch("https://api.web3forms.com/submit", {
+      const res = await fetch(ENDPOINT, {
         method: "POST",
-        body: formData,
+        body: new FormData(e.currentTarget),
       });
       const data = (await res.json()) as { success?: boolean; message?: string };
 
@@ -87,7 +83,24 @@ export function Contact() {
           </p>
         </div>
         <div className="contact-grid">
-          <form ref={formRef} onSubmit={onSubmit}>
+          <form
+            ref={formRef}
+            action={ENDPOINT}
+            method="POST"
+            onSubmit={onSubmit}
+          >
+            <input type="hidden" name="access_key" value={ACCESS_KEY} />
+            <input
+              type="hidden"
+              name="subject"
+              value="New CICANDA contact form submission"
+            />
+            <input type="hidden" name="from_name" value="CICANDA Website" />
+            <input
+              type="hidden"
+              name="redirect"
+              value="https://cicanda.com/?contact=sent"
+            />
             {status.kind === "success" && (
               <div className="form-success">
                 <IconCheck size={18} stroke={2.4} />
