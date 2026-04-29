@@ -120,7 +120,6 @@ p { margin: 0; line-height: 1.6; color: var(--c-ink-2); text-wrap: pretty; }
 .nav__menu-btn:hover { background: var(--c-blue-50); }
 
 .mobile-menu {
-  display: none;
   border-top: 1px solid var(--c-line);
   background: white;
   padding: 12px 24px 20px;
@@ -624,7 +623,7 @@ p { margin: 0; line-height: 1.6; color: var(--c-ink-2); text-wrap: pretty; }
   background-position: right 16px center;
   padding-right: 44px;
 }
-.field__row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.field__row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 18px; }
 .field__row .field { margin-bottom: 0; }
 
 .contact-card {
