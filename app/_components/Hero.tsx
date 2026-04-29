@@ -1,4 +1,4 @@
-import { IconArrow, IconShield } from "./icons";
+import { IconArrow } from "./icons";
 
 function DotMap() {
   const cols = 28,
@@ -103,15 +103,6 @@ export function Hero() {
             </div>
           </div>
           <span className="hero-tri" />
-          <div className="hero-card hero-card--badge">
-            <div className="ico">
-              <IconShield size={22} />
-            </div>
-            <div>
-              <div className="t1">ISO-aligned delivery</div>
-              <div className="t2">Vetted partners only</div>
-            </div>
-          </div>
         </div>
       </div>
     </section>

@@ -1,5 +1,6 @@
 import { About } from "./_components/About";
 import { Contact } from "./_components/Contact";
+import { FloatingBadge } from "./_components/FloatingBadge";
 import { Footer } from "./_components/Footer";
 import { Hero } from "./_components/Hero";
 import { Nav } from "./_components/Nav";
@@ -18,6 +19,7 @@ export default function Home() {
         <Contact />
       </main>
       <Footer />
+      <FloatingBadge />
     </>
   );
 }
