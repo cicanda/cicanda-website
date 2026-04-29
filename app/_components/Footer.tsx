@@ -45,7 +45,7 @@ export function Footer() {
             <h5>Get in touch</h5>
             <ul>
               <li>
-                <a href="mailto:info@cicanda.com">info@cicanda.com</a>
+                <a href="mailto:hello@cicanda.com">hello@cicanda.com</a>
               </li>
               <li>
                 <a href="tel:+2347065622760">+234 706 562 2760</a>
