@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { FadeUp, Stagger, StaggerItem } from "../../_components/Animate";
 import { FaqSection } from "../../_components/FaqSection";
 import { Footer } from "../../_components/Footer";
 import { IconArrow, IconBroadcast, IconCheck, IconChip, IconHandshake, IconShield } from "../../_components/icons";
@@ -89,21 +90,23 @@ export default function ITServicesPage() {
         {/* Service areas */}
         <section className="section">
           <div className="container">
-            <div className="section__head">
-              <div>
-                <div className="section__kicker">What we deliver</div>
-                <h2 className="section__title">
-                  Three disciplines, <span className="hl">one delivery team</span>.
-                </h2>
+            <FadeUp>
+              <div className="section__head">
+                <div>
+                  <div className="section__kicker">What we deliver</div>
+                  <h2 className="section__title">
+                    Three disciplines, <span className="hl">one delivery team</span>.
+                  </h2>
+                </div>
+                <p className="section__lede">
+                  Whether the brief is a network refresh, a procurement cycle, or an
+                  ongoing security review, the same senior team carries the work from
+                  brief to close.
+                </p>
               </div>
-              <p className="section__lede">
-                Whether the brief is a network refresh, a procurement cycle, or an
-                ongoing security review, the same senior team carries the work from
-                brief to close.
-              </p>
-            </div>
-            <div className="feature-grid">
-              <div className="feature-card">
+            </FadeUp>
+            <Stagger className="feature-grid">
+              <StaggerItem className="feature-card">
                 <div className="feature-card__icon">
                   <IconChip size={26} />
                 </div>
@@ -125,9 +128,9 @@ export default function ITServicesPage() {
                     <li key={b}><IconCheck size={14} stroke={2.4} /><span>{b}</span></li>
                   ))}
                 </ul>
-              </div>
+              </StaggerItem>
 
-              <div className="feature-card">
+              <StaggerItem className="feature-card">
                 <div className="feature-card__icon">
                   <IconArrow size={24} stroke={1.8} />
                 </div>
@@ -149,9 +152,9 @@ export default function ITServicesPage() {
                     <li key={b}><IconCheck size={14} stroke={2.4} /><span>{b}</span></li>
                   ))}
                 </ul>
-              </div>
+              </StaggerItem>
 
-              <div className="feature-card">
+              <StaggerItem className="feature-card">
                 <div className="feature-card__icon">
                   <IconShield size={26} />
                 </div>
@@ -173,25 +176,27 @@ export default function ITServicesPage() {
                     <li key={b}><IconCheck size={14} stroke={2.4} /><span>{b}</span></li>
                   ))}
                 </ul>
-              </div>
-            </div>
+              </StaggerItem>
+            </Stagger>
 
             {/* CTA strip */}
-            <div className="cta-strip">
-              <div>
-                <h3>Ready to talk about your IT environment?</h3>
-                <p>
-                  Tell us what you&rsquo;re working with and what needs to
-                  improve. We&rsquo;ll come back with a clear proposal: no
-                  jargon, no padding.
-                </p>
+            <FadeUp delay={0.1}>
+              <div className="cta-strip">
+                <div>
+                  <h3>Ready to talk about your IT environment?</h3>
+                  <p>
+                    Tell us what you&rsquo;re working with and what needs to
+                    improve. We&rsquo;ll come back with a clear proposal: no
+                    jargon, no padding.
+                  </p>
+                </div>
+                <div className="cta-strip__actions">
+                  <Link href="/contact" className="btn btn--primary">
+                    Get in touch <IconArrow className="arrow" size={16} stroke={2.2} />
+                  </Link>
+                </div>
               </div>
-              <div className="cta-strip__actions">
-                <Link href="/contact" className="btn btn--primary">
-                  Get in touch <IconArrow className="arrow" size={16} stroke={2.2} />
-                </Link>
-              </div>
-            </div>
+            </FadeUp>
           </div>
         </section>
 

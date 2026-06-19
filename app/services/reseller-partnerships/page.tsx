@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { FadeUp, Stagger, StaggerItem } from "../../_components/Animate";
 import { FaqSection } from "../../_components/FaqSection";
 import { Footer } from "../../_components/Footer";
 import { IconArrow, IconCheck, IconGlobe, IconHandshake, IconShield, IconUsers } from "../../_components/icons";
@@ -85,22 +86,24 @@ export default function ResellerPage() {
         {/* Service areas */}
         <section className="section">
           <div className="container">
-            <div className="section__head">
-              <div>
-                <div className="section__kicker">What we deliver</div>
-                <h2 className="section__title">
-                  End-to-end from{" "}
-                  <span className="hl">vendor to your door</span>.
-                </h2>
+            <FadeUp>
+              <div className="section__head">
+                <div>
+                  <div className="section__kicker">What we deliver</div>
+                  <h2 className="section__title">
+                    End-to-end from{" "}
+                    <span className="hl">vendor to your door</span>.
+                  </h2>
+                </div>
+                <p className="section__lede">
+                  Whether you need a single licensed product or a long-term supply
+                  relationship with an international vendor, we manage the full
+                  commercial and logistical chain in Nigeria.
+                </p>
               </div>
-              <p className="section__lede">
-                Whether you need a single licensed product or a long-term supply
-                relationship with an international vendor, we manage the full
-                commercial and logistical chain in Nigeria.
-              </p>
-            </div>
-            <div className="feature-grid">
-              <div className="feature-card">
+            </FadeUp>
+            <Stagger className="feature-grid">
+              <StaggerItem className="feature-card">
                 <div className="feature-card__icon">
                   <IconShield size={26} />
                 </div>
@@ -122,9 +125,9 @@ export default function ResellerPage() {
                     <li key={b}><IconCheck size={14} stroke={2.4} /><span>{b}</span></li>
                   ))}
                 </ul>
-              </div>
+              </StaggerItem>
 
-              <div className="feature-card">
+              <StaggerItem className="feature-card">
                 <div className="feature-card__icon">
                   <IconHandshake size={26} />
                 </div>
@@ -146,9 +149,9 @@ export default function ResellerPage() {
                     <li key={b}><IconCheck size={14} stroke={2.4} /><span>{b}</span></li>
                   ))}
                 </ul>
-              </div>
+              </StaggerItem>
 
-              <div className="feature-card">
+              <StaggerItem className="feature-card">
                 <div className="feature-card__icon">
                   <IconGlobe size={26} />
                 </div>
@@ -171,25 +174,27 @@ export default function ResellerPage() {
                     <li key={b}><IconCheck size={14} stroke={2.4} /><span>{b}</span></li>
                   ))}
                 </ul>
-              </div>
-            </div>
+              </StaggerItem>
+            </Stagger>
 
             {/* CTA strip */}
-            <div className="cta-strip">
-              <div>
-                <h3>Ready to source or partner through Nigeria?</h3>
-                <p>
-                  Tell us what you need to procure or what market access you
-                  are looking to establish. We will respond with a clear view of
-                  how we can help and what it would cost.
-                </p>
+            <FadeUp delay={0.1}>
+              <div className="cta-strip">
+                <div>
+                  <h3>Ready to source or partner through Nigeria?</h3>
+                  <p>
+                    Tell us what you need to procure or what market access you
+                    are looking to establish. We will respond with a clear view of
+                    how we can help and what it would cost.
+                  </p>
+                </div>
+                <div className="cta-strip__actions">
+                  <Link href="/contact" className="btn btn--primary">
+                    Get in touch <IconArrow className="arrow" size={16} stroke={2.2} />
+                  </Link>
+                </div>
               </div>
-              <div className="cta-strip__actions">
-                <Link href="/contact" className="btn btn--primary">
-                  Get in touch <IconArrow className="arrow" size={16} stroke={2.2} />
-                </Link>
-              </div>
-            </div>
+            </FadeUp>
           </div>
         </section>
 

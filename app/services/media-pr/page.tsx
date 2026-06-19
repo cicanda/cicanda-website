@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { FadeUp, Stagger, StaggerItem } from "../../_components/Animate";
 import { FaqSection } from "../../_components/FaqSection";
 import { Footer } from "../../_components/Footer";
 import { IconArrow, IconBroadcast, IconCheck, IconGlobe, IconSpark, IconUsers } from "../../_components/icons";
@@ -85,23 +86,25 @@ export default function MediaPrPage() {
         {/* Service areas */}
         <section className="section">
           <div className="container">
-            <div className="section__head">
-              <div>
-                <div className="section__kicker">What we deliver</div>
-                <h2 className="section__title">
-                  Communications that{" "}
-                  <span className="hl">land and last</span>.
-                </h2>
+            <FadeUp>
+              <div className="section__head">
+                <div>
+                  <div className="section__kicker">What we deliver</div>
+                  <h2 className="section__title">
+                    Communications that{" "}
+                    <span className="hl">land and last</span>.
+                  </h2>
+                </div>
+                <p className="section__lede">
+                  We keep the work focused on credibility rather than volume. Every
+                  engagement is run by practitioners who understand both the
+                  Nigerian media landscape and the standards expected by
+                  international partners.
+                </p>
               </div>
-              <p className="section__lede">
-                We keep the work focused on credibility rather than volume. Every
-                engagement is run by practitioners who understand both the
-                Nigerian media landscape and the standards expected by
-                international partners.
-              </p>
-            </div>
-            <div className="feature-grid">
-              <div className="feature-card">
+            </FadeUp>
+            <Stagger className="feature-grid">
+              <StaggerItem className="feature-card">
                 <div className="feature-card__icon">
                   <IconSpark size={26} />
                 </div>
@@ -123,9 +126,9 @@ export default function MediaPrPage() {
                     <li key={b}><IconCheck size={14} stroke={2.4} /><span>{b}</span></li>
                   ))}
                 </ul>
-              </div>
+              </StaggerItem>
 
-              <div className="feature-card">
+              <StaggerItem className="feature-card">
                 <div className="feature-card__icon">
                   <IconBroadcast size={26} />
                 </div>
@@ -148,9 +151,9 @@ export default function MediaPrPage() {
                     <li key={b}><IconCheck size={14} stroke={2.4} /><span>{b}</span></li>
                   ))}
                 </ul>
-              </div>
+              </StaggerItem>
 
-              <div className="feature-card">
+              <StaggerItem className="feature-card">
                 <div className="feature-card__icon">
                   <IconUsers size={26} />
                 </div>
@@ -172,25 +175,27 @@ export default function MediaPrPage() {
                     <li key={b}><IconCheck size={14} stroke={2.4} /><span>{b}</span></li>
                   ))}
                 </ul>
-              </div>
-            </div>
+              </StaggerItem>
+            </Stagger>
 
             {/* CTA strip */}
-            <div className="cta-strip">
-              <div>
-                <h3>Looking to sharpen your communications?</h3>
-                <p>
-                  Tell us about your organisation and the audience you need to
-                  reach. We will respond with an honest view of what we can
-                  do and what it would take.
-                </p>
+            <FadeUp delay={0.1}>
+              <div className="cta-strip">
+                <div>
+                  <h3>Looking to sharpen your communications?</h3>
+                  <p>
+                    Tell us about your organisation and the audience you need to
+                    reach. We will respond with an honest view of what we can
+                    do and what it would take.
+                  </p>
+                </div>
+                <div className="cta-strip__actions">
+                  <Link href="/contact" className="btn btn--primary">
+                    Get in touch <IconArrow className="arrow" size={16} stroke={2.2} />
+                  </Link>
+                </div>
               </div>
-              <div className="cta-strip__actions">
-                <Link href="/contact" className="btn btn--primary">
-                  Get in touch <IconArrow className="arrow" size={16} stroke={2.2} />
-                </Link>
-              </div>
-            </div>
+            </FadeUp>
           </div>
         </section>
 

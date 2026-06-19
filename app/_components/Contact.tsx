@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState, type FormEvent } from "react";
+import { FadeUp } from "./Animate";
 import {
   IconCheck,
   IconMail,
@@ -68,20 +69,23 @@ export function Contact() {
   return (
     <section className="section" id="contact">
       <div className="container">
-        <div className="section__head">
-          <div>
-            <div className="section__kicker">Contact</div>
-            <h2 className="section__title">
-              Tell us what you&rsquo;re building. We&rsquo;ll come back within{" "}
-              <span className="hl">one business day</span>.
-            </h2>
+        <FadeUp>
+          <div className="section__head">
+            <div>
+              <div className="section__kicker">Contact</div>
+              <h2 className="section__title">
+                Tell us what you&rsquo;re building. We&rsquo;ll come back within{" "}
+                <span className="hl">one business day</span>.
+              </h2>
+            </div>
+            <p className="section__lede">
+              For new engagements, partnership requests or a quick question, the
+              form below routes straight to the team. Prefer a call or an email?
+              Details are on the right.
+            </p>
           </div>
-          <p className="section__lede">
-            For new engagements, partnership requests or a quick question, the
-            form below routes straight to the team. Prefer a call or an email?
-            Details are on the right.
-          </p>
-        </div>
+        </FadeUp>
+        <FadeUp delay={0.1}>
         <div className="contact-grid">
           <form
             ref={formRef}
@@ -210,6 +214,7 @@ export function Contact() {
             </div>
           </aside>
         </div>
+        </FadeUp>
       </div>
     </section>
   );

@@ -84,42 +84,44 @@ export default function AboutPage() {
         <section className="section">
           <div className="container">
             <div className="about-grid">
-              <div>
-                <div className="section__kicker">Our story</div>
-                <h2 className="section__title">
-                  Started because bad delivery kept{" "}
-                  <span className="hl">costing everyone</span>.
-                </h2>
-                <div className="about__story" style={{ marginTop: 28 }}>
-                  <p>
-                    CICANDA was founded by operators who had spent years watching
-                    good projects stall on bad delivery. Vendors who overpromised,
-                    partners who disappeared, comms that never landed. We started
-                    the company to be the opposite of that: a small, accountable
-                    team you can call by name.
-                  </p>
-                  <p>
-                    Today we work with Nigerian organisations and international
-                    partners across three connected disciplines: Information
-                    Technology, Media &amp; PR, and Reseller &amp; Partnerships.
-                    Different clients, same operating principle: be the one
-                    supplier the rest of the room can rely on.
-                  </p>
-                  <p>
-                    We are headquartered at Aco Housing Estate Complex in Abuja,
-                    with a secondary line in Zagreb, Croatia, that keeps us
-                    connected to European vendors, standards, and partners. The
-                    combination gives clients access to international reach without
-                    losing the local knowledge that makes delivery in Nigeria
-                    actually work.
-                  </p>
+              <FadeUp>
+                <div>
+                  <div className="section__kicker">Our story</div>
+                  <h2 className="section__title">
+                    Started because bad delivery kept{" "}
+                    <span className="hl">costing everyone</span>.
+                  </h2>
+                  <div className="about__story" style={{ marginTop: 28 }}>
+                    <p>
+                      CICANDA was founded by operators who had spent years watching
+                      good projects stall on bad delivery. Vendors who overpromised,
+                      partners who disappeared, comms that never landed. We started
+                      the company to be the opposite of that: a small, accountable
+                      team you can call by name.
+                    </p>
+                    <p>
+                      Today we work with Nigerian organisations and international
+                      partners across three connected disciplines: Information
+                      Technology, Media &amp; PR, and Reseller &amp; Partnerships.
+                      Different clients, same operating principle: be the one
+                      supplier the rest of the room can rely on.
+                    </p>
+                    <p>
+                      We are headquartered at Aco Housing Estate Complex in Abuja,
+                      with a secondary line in Zagreb, Croatia, that keeps us
+                      connected to European vendors, standards, and partners. The
+                      combination gives clients access to international reach without
+                      losing the local knowledge that makes delivery in Nigeria
+                      actually work.
+                    </p>
+                  </div>
+                  <div className="about__quote">
+                    &ldquo;Creating reliable solutions&rdquo; isn&rsquo;t a tagline
+                    we wrote in a brand workshop. It&rsquo;s the brief we hold
+                    ourselves to on every engagement.
+                  </div>
                 </div>
-                <div className="about__quote">
-                  &ldquo;Creating reliable solutions&rdquo; isn&rsquo;t a tagline
-                  we wrote in a brand workshop. It&rsquo;s the brief we hold
-                  ourselves to on every engagement.
-                </div>
-              </div>
+              </FadeUp>
               <div>
                 <div className="section__kicker">Why CICANDA</div>
                 <h3 style={{ fontSize: 22, marginBottom: 22 }}>
@@ -142,18 +144,20 @@ export default function AboutPage() {
         {/* Reach */}
         <section className="section section--soft">
           <div className="container">
-            <div className="section__kicker">Where we operate</div>
-            <h2 className="section__title" style={{ maxWidth: 520 }}>
-              Nigerian roots.{" "}
-              <span className="hl">European reach.</span>
-            </h2>
-            <p style={{ fontSize: 17, color: "var(--c-ink-2)", maxWidth: 600, marginTop: 16 }}>
-              Our primary base is Abuja, where the majority of our client
-              work is delivered. Our Zagreb line gives us direct access to
-              European vendors, compliance frameworks, and commercial
-              partnerships, which matters when a client needs international
-              standards applied locally.
-            </p>
+            <FadeUp>
+              <div className="section__kicker">Where we operate</div>
+              <h2 className="section__title" style={{ maxWidth: 520 }}>
+                Nigerian roots.{" "}
+                <span className="hl">European reach.</span>
+              </h2>
+              <p style={{ fontSize: 17, color: "var(--c-ink-2)", maxWidth: 600, marginTop: 16 }}>
+                Our primary base is Abuja, where the majority of our client
+                work is delivered. Our Zagreb line gives us direct access to
+                European vendors, compliance frameworks, and commercial
+                partnerships, which matters when a client needs international
+                standards applied locally.
+              </p>
+            </FadeUp>
             <Stagger className="reach-grid">
               <StaggerItem className="reach-card">
                 <div className="reach-card__flag">🇳🇬</div>

@@ -61,11 +61,12 @@ const container = {
 };
 
 const card = {
-  hidden: { opacity: 0, y: 36 },
+  hidden: { opacity: 0, y: 56, scale: 0.96 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.65, ease: EASE },
+    scale: 1,
+    transition: { duration: 0.6, ease: EASE },
   },
 };
 
@@ -95,7 +96,7 @@ export function Services() {
           className="services"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.1 }}
+          viewport={{ once: true, amount: 0.05, margin: "0px 0px -30px 0px" }}
           variants={container}
         >
           {SERVICES.map((s) => (

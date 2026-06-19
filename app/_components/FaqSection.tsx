@@ -1,5 +1,6 @@
 "use client";
 import { AnimatePresence, motion } from "motion/react";
+import { FadeUp } from "./Animate";
 
 const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
 import { useState } from "react";
@@ -79,15 +80,19 @@ export function FaqSection({
     <section className="faq-section section--soft">
       <JsonLd data={schema} />
       <div className="container">
-        <div className="section__kicker">FAQ</div>
-        <h2 className="section__title" style={{ maxWidth: 520 }}>
-          {heading}
-        </h2>
-        <div className="faq-list" role="list">
-          {items.map((item, i) => (
-            <AccordionItem key={i} q={item.q} a={item.a} />
-          ))}
-        </div>
+        <FadeUp>
+          <div className="section__kicker">FAQ</div>
+          <h2 className="section__title" style={{ maxWidth: 520 }}>
+            {heading}
+          </h2>
+        </FadeUp>
+        <FadeUp delay={0.1}>
+          <div className="faq-list" role="list">
+            {items.map((item, i) => (
+              <AccordionItem key={i} q={item.q} a={item.a} />
+            ))}
+          </div>
+        </FadeUp>
       </div>
     </section>
   );
