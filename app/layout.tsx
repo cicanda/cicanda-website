@@ -48,14 +48,14 @@ export const metadata: Metadata = {
     url: SITE_URL,
     title: "CICANDA · Creating reliable solutions",
     description:
-      "Information Technology, Media & PR, and Reseller partnerships — delivered reliably from Abuja, Nigeria.",
+      "Information Technology, Media & PR, and Reseller partnerships, delivered reliably from Abuja, Nigeria.",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "CICANDA" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "CICANDA · Creating reliable solutions",
     description:
-      "Information Technology, Media & PR, and Reseller partnerships — delivered reliably from Abuja, Nigeria.",
+      "Information Technology, Media & PR, and Reseller partnerships, delivered reliably from Abuja, Nigeria.",
     images: ["/og-image.png"],
   },
   alternates: { canonical: SITE_URL },

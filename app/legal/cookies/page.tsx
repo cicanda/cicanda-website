@@ -74,8 +74,8 @@ export default function CookiesPage() {
                 following cookies:
               </p>
               <ul>
-                <li><strong>_ga</strong> — distinguishes users. Expires in 2 years.</li>
-                <li><strong>_ga_[ID]</strong> — maintains session state. Expires in 2 years.</li>
+                <li><strong>_ga</strong>:distinguishes users. Expires in 2 years.</li>
+                <li><strong>_ga_[ID]</strong>:maintains session state. Expires in 2 years.</li>
               </ul>
               <p>
                 Google Analytics data is processed under the terms of Google&rsquo;s data processing

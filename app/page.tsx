@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "CICANDA · Creating reliable solutions",
     description:
-      "Information Technology, Media & PR, and Reseller partnerships — delivered reliably from Abuja, Nigeria.",
+      "Information Technology, Media & PR, and Reseller partnerships, delivered reliably from Abuja, Nigeria.",
     url: "https://cicanda.com",
   },
 };

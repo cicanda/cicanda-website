@@ -18,9 +18,9 @@ import { FaqSection } from "../_components/FaqSection";
 import { PageHero } from "../_components/PageHero";
 
 export const metadata: Metadata = {
-  title: "Services — Information Technology, Media & PR, Reseller Partnerships",
+  title: "Services: Information Technology, Media & PR, Reseller Partnerships",
   description:
-    "CICANDA delivers three focused service lines — Information Technology, Media & PR, and Reseller & Partnerships — to organisations across Nigeria and beyond. Same team. Same standard. Every engagement.",
+    "CICANDA delivers three focused service lines (Information Technology, Media & PR, and Reseller & Partnerships) to organisations across Nigeria and beyond. Same team. Same standard. Every engagement.",
   alternates: { canonical: "https://cicanda.com/services" },
   openGraph: {
     title: "CICANDA Services | IT, Media & PR, Reseller Partnerships",
@@ -58,7 +58,7 @@ const LINES = [
     icon: <IconBroadcast size={28} />,
     title: "Media & PR",
     href: "/services/media-pr",
-    desc: "Sharper messaging and steady earned visibility. We build communication strategies grounded in what your audience actually needs to hear — not what looks good in a deck.",
+    desc: "Sharper messaging and steady earned visibility. We build communication strategies grounded in what your audience actually needs to hear, not what looks good in a deck.",
     bullets: [
       "Brand strategy & corporate communications",
       "Press relations and media placement",
@@ -110,11 +110,11 @@ const faqs = [
   },
   {
     q: "Are engagements fixed-scope or ongoing?",
-    a: "Both, depending on what the brief requires. Some clients engage us for a defined project — a network deployment, a press campaign, a procurement cycle. Others retain us on an ongoing basis for managed IT, PR, or partnership support. We are happy with either structure.",
+    a: "Both, depending on what the brief requires. Some clients engage us for a defined project: a network deployment, a press campaign, or a procurement cycle. Others retain us on an ongoing basis for managed IT, PR, or partnership support. We are happy with either structure.",
   },
   {
     q: "Which service line is right for us?",
-    a: "If you are unsure which discipline best fits your need, reach out through the contact page with a short description of what you are trying to achieve. We will tell you honestly which service line applies — and equally honestly if none of them do.",
+    a: "If you are unsure which discipline best fits your need, reach out through the contact page with a short description of what you are trying to achieve. We will tell you honestly which service line applies, and equally honestly if none of them do.",
   },
 ];
 
@@ -133,7 +133,7 @@ export default function ServicesPage() {
               <span style={{ color: "var(--c-blue-500)" }}>One delivery standard.</span>
             </>
           }
-          lead="CICANDA operates across Information Technology, Media & PR, and Reseller & Partnerships. Each line is staffed and managed to the same standard — the same team, the same rigour, on every engagement."
+          lead="CICANDA operates across Information Technology, Media & PR, and Reseller & Partnerships. Each line is staffed and managed to the same standard: the same team, the same rigour, on every engagement."
         >
           <Link href="/contact" className="btn btn--white">
             Discuss your brief <IconArrow className="arrow" size={16} stroke={2.2} />
@@ -155,7 +155,7 @@ export default function ServicesPage() {
                 <p className="section__lede">
                   We have kept the offering deliberately narrow so every brief
                   receives senior attention. There is no junior team behind the
-                  scenes — the same practitioners who scope the work deliver it.
+                  scenes; the same practitioners who scope the work deliver it.
                 </p>
               </div>
             </FadeUp>

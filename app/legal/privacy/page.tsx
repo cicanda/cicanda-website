@@ -55,7 +55,7 @@ export default function PrivacyPage() {
               <h2>2. What Personal Data We Collect</h2>
               <p>We may collect the following categories of personal data:</p>
               <ul>
-                <li><strong>Contact and identity data:</strong> your name, job title, organisation name, email address, and telephone number — provided when you contact us or submit an enquiry form.</li>
+                <li><strong>Contact and identity data:</strong> your name, job title, organisation name, email address, and telephone number, provided when you contact us or submit an enquiry form.</li>
                 <li><strong>Communication data:</strong> the content of messages you send us through this website, by email, or by telephone.</li>
                 <li><strong>Technical data:</strong> your IP address, browser type and version, time zone, browser plug-in types, operating system, and other technology on the devices you use to access this website (collected automatically via our analytics tools).</li>
                 <li><strong>Usage data:</strong> information about how you use our website, including pages visited, time spent, and links clicked.</li>

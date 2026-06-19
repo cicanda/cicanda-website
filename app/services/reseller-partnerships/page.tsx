@@ -37,7 +37,7 @@ const faqs = [
   },
   {
     q: "Can you represent a foreign vendor entering Nigeria?",
-    a: "Yes. We can act as your in-country representative — handling client relationships, logistics, regulatory considerations, and local market intelligence. For vendors without an established Nigerian presence, this provides a credible local voice without the overhead of setting up an office.",
+    a: "Yes. We can act as your in-country representative: handling client relationships, logistics, regulatory considerations, and local market intelligence. For vendors without an established Nigerian presence, this provides a credible local voice without the overhead of setting up an office.",
   },
   {
     q: "What product categories do you resell?",
@@ -45,7 +45,7 @@ const faqs = [
   },
   {
     q: "How do you handle procurement logistics and customs?",
-    a: "We manage the full import chain — purchase orders, freight forwarding, customs documentation, duty payments, and last-mile delivery. We work with established logistics partners and are experienced in the Nigerian import environment.",
+    a: "We manage the full import chain: purchase orders, freight forwarding, customs documentation, duty payments, and last-mile delivery. We work with established logistics partners and are experienced in the Nigerian import environment.",
   },
   {
     q: "Do you manage software licence renewals?",
@@ -72,7 +72,7 @@ export default function ResellerPage() {
               <span style={{ color: "var(--c-blue-500)" }}>international vendors</span>.
             </>
           }
-          lead="Authorised reselling, procurement, logistics, and local representation — handled end-to-end so your organisation gets what it ordered, legitimately, on time."
+          lead="Authorised reselling, procurement, logistics, and local representation, handled end-to-end so your organisation gets what it ordered, legitimately, on time."
         >
           <Link href="/contact" className="btn btn--white">
             Discuss your procurement brief <IconArrow className="arrow" size={16} stroke={2.2} />
@@ -106,7 +106,7 @@ export default function ResellerPage() {
                 </div>
                 <h3>Authorised Reselling</h3>
                 <p>
-                  Legitimate product sourced through authorised channels —
+                  Legitimate product sourced through authorised channels,
                   complete with warranty, proper documentation, and a local
                   contact who can actually help when something goes wrong.
                   No grey market risk, no licence disputes.
@@ -155,7 +155,7 @@ export default function ResellerPage() {
                 <h3>Local Representation for Foreign Partners</h3>
                 <p>
                   For international vendors without an established Nigerian
-                  presence, we act as your in-country representative — building
+                  presence, we act as your in-country representative, building
                   client relationships, navigating the local market, and
                   providing the ground-level intelligence that remote teams
                   cannot replicate.

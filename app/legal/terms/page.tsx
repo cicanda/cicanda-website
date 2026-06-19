@@ -81,8 +81,8 @@ export default function TermsPage() {
 
               <h2>4. Intellectual Property</h2>
               <p>
-                All content on this website — including but not limited to text, graphics, logos, icons,
-                images, and software — is the property of CICANDA Limited or its content suppliers and is
+                All content on this website, including but not limited to text, graphics, logos, icons,
+                images, and software, is the property of CICANDA Limited or its content suppliers and is
                 protected under applicable Nigerian and international intellectual property laws.
               </p>
               <p>

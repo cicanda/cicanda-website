@@ -9,14 +9,14 @@ import { PageHero } from "../_components/PageHero";
 import type { ReactNode } from "react";
 
 export const metadata: Metadata = {
-  title: "About CICANDA — Built in Abuja for Work That Has to Just Work",
+  title: "About CICANDA: Built in Abuja for Work That Has to Just Work",
   description:
     "CICANDA Limited was founded by operators who had spent years watching good projects stall on bad delivery. We deliver Information Technology, Media & PR, and Reseller partnerships from Abuja, Nigeria, with reach into Europe.",
   alternates: { canonical: "https://cicanda.com/about" },
   openGraph: {
     title: "About CICANDA | Creating reliable solutions",
     description:
-      "Founded by operators in Abuja, Nigeria. Three service lines — IT, Media & PR, and Reseller partnerships — delivered to the same standard on every engagement.",
+      "Founded by operators in Abuja, Nigeria. Three service lines (IT, Media & PR, and Reseller partnerships) delivered to the same standard on every engagement.",
     url: "https://cicanda.com/about",
   },
 };
@@ -73,7 +73,7 @@ export default function AboutPage() {
               <span style={{ color: "var(--c-blue-500)" }}>just work</span>.
             </>
           }
-          lead="CICANDA Limited is a Nigerian firm founded by operators. We deliver Information Technology, Media & PR, and Reseller partnerships — with the same team, the same standard, on every engagement."
+          lead="CICANDA Limited is a Nigerian firm founded by operators. We deliver Information Technology, Media & PR, and Reseller partnerships, with the same team, the same standard, on every engagement."
         >
           <Link href="/contact" className="btn btn--white">
             Get in touch <IconArrow className="arrow" size={16} stroke={2.2} />
@@ -151,13 +151,13 @@ export default function AboutPage() {
               Our primary base is Abuja, where the majority of our client
               work is delivered. Our Zagreb line gives us direct access to
               European vendors, compliance frameworks, and commercial
-              partnerships — which matters when a client needs international
+              partnerships, which matters when a client needs international
               standards applied locally.
             </p>
             <Stagger className="reach-grid">
               <StaggerItem className="reach-card">
                 <div className="reach-card__flag">🇳🇬</div>
-                <h4>Abuja, Nigeria — Headquarters</h4>
+                <h4>Abuja, Nigeria: Headquarters</h4>
                 <p>
                   Aco Housing Estate Complex, Abuja.<br />
                   Our primary delivery base. IT, Media &amp; PR, and Reseller
@@ -167,7 +167,7 @@ export default function AboutPage() {
               </StaggerItem>
               <StaggerItem className="reach-card">
                 <div className="reach-card__flag">🇭🇷</div>
-                <h4>Zagreb, Croatia — European Line</h4>
+                <h4>Zagreb, Croatia: European Line</h4>
                 <p>
                   Secondary operations supporting European vendor relationships,
                   procurement chains, and international partner engagement.<br /><br />

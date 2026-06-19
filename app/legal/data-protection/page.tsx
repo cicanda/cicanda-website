@@ -97,10 +97,10 @@ export default function DataProtectionPage() {
                 as defined under the NDPR:
               </p>
               <ul>
-                <li><strong>Consent</strong> — where the data subject has given clear, informed consent.</li>
-                <li><strong>Contract performance</strong> — where processing is necessary to perform a contract with the data subject or at their request prior to entering a contract.</li>
-                <li><strong>Legitimate interests</strong> — where we have a legitimate business interest that is not overridden by the data subject&rsquo;s rights and interests.</li>
-                <li><strong>Legal obligation</strong> — where processing is required to comply with a statutory obligation.</li>
+                <li><strong>Consent:</strong> where the data subject has given clear, informed consent.</li>
+                <li><strong>Contract performance:</strong> where processing is necessary to perform a contract with the data subject or at their request prior to entering a contract.</li>
+                <li><strong>Legitimate interests:</strong> where we have a legitimate business interest that is not overridden by the data subject&rsquo;s rights and interests.</li>
+                <li><strong>Legal obligation:</strong> where processing is required to comply with a statutory obligation.</li>
               </ul>
 
               <h2>5. Data Subject Rights</h2>

@@ -13,7 +13,7 @@ import { PageHero } from "../_components/PageHero";
 export const metadata: Metadata = {
   title: "Insights from the CICANDA Desk",
   description:
-    "Perspectives on IT, Media & PR, and market partnerships in Nigeria. Brief notes on what we are seeing and working on — once a month, no noise.",
+    "Perspectives on IT, Media & PR, and market partnerships in Nigeria. Brief notes on what we are seeing and working on, once a month, no noise.",
   alternates: { canonical: "https://cicanda.com/blog" },
   openGraph: {
     title: "Insights from the CICANDA Desk",

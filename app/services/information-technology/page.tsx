@@ -10,7 +10,7 @@ import { PageHero } from "../../_components/PageHero";
 export const metadata: Metadata = {
   title: "IT Services & Managed Technology Solutions in Nigeria",
   description:
-    "CICANDA delivers practical IT services across Abuja and Nigeria — network design & deployment, cloud and hardware procurement, and cybersecurity audits & managed services.",
+    "CICANDA delivers practical IT services across Abuja and Nigeria: network design & deployment, cloud and hardware procurement, and cybersecurity audits & managed services.",
   alternates: { canonical: "https://cicanda.com/services/information-technology" },
   openGraph: {
     title: "IT Services & Managed Technology Solutions in Nigeria | CICANDA",
@@ -33,7 +33,7 @@ const breadcrumbSchema = {
 const faqs = [
   {
     q: "Do you offer ongoing managed IT support?",
-    a: "Yes. Beyond one-off projects, CICANDA provides managed IT services covering network monitoring, helpdesk support, patch management, and vendor liaison — so your team can focus on the work rather than the infrastructure beneath it.",
+    a: "Yes. Beyond one-off projects, CICANDA provides managed IT services covering network monitoring, helpdesk support, patch management, and vendor liaison, so your team can focus on the work rather than the infrastructure beneath it.",
   },
   {
     q: "Which vendors do you procure hardware and software from?",
@@ -45,7 +45,7 @@ const faqs = [
   },
   {
     q: "Can you design and deploy a network from scratch?",
-    a: "Yes. We handle the full cycle — site survey, network architecture, equipment specification and procurement, physical deployment, configuration, and handover documentation — for both new sites and expansion projects.",
+    a: "Yes. We handle the full cycle: site survey, network architecture, equipment specification and procurement, physical deployment, configuration, and handover documentation, for both new sites and expansion projects.",
   },
   {
     q: "Do you work with small organisations as well as large enterprises?",
@@ -110,7 +110,7 @@ export default function ITServicesPage() {
                 <h3>Network Design &amp; Deployment</h3>
                 <p>
                   Structured networks designed for your environment and built to
-                  last — from site survey to final configuration. We handle LAN,
+                  last, from site survey to final configuration. We handle LAN,
                   WAN, Wi-Fi, and structured cabling, and we document everything
                   so your team is never left guessing.
                 </p>
@@ -134,7 +134,7 @@ export default function ITServicesPage() {
                 <h3>Cloud &amp; Hardware Procurement</h3>
                 <p>
                   We source, specify, and procure IT equipment and cloud services
-                  through authorised channels — no grey market, no inflated
+                  through authorised channels: no grey market, no inflated
                   margins. From a single server to a full office refresh, we
                   manage the supply chain so you don&rsquo;t have to.
                 </p>
@@ -158,7 +158,7 @@ export default function ITServicesPage() {
                 <h3>Cybersecurity Audits &amp; Managed Services</h3>
                 <p>
                   A realistic view of your security posture, followed by a
-                  practical remediation plan — not a report that sits on a shelf.
+                  practical remediation plan, not a report that sits on a shelf.
                   We can also act as your ongoing managed security partner, keeping
                   defences current as threats evolve.
                 </p>
@@ -182,7 +182,7 @@ export default function ITServicesPage() {
                 <h3>Ready to talk about your IT environment?</h3>
                 <p>
                   Tell us what you&rsquo;re working with and what needs to
-                  improve. We&rsquo;ll come back with a clear proposal — no
+                  improve. We&rsquo;ll come back with a clear proposal: no
                   jargon, no padding.
                 </p>
               </div>

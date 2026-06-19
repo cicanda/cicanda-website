@@ -7,7 +7,7 @@ import { Nav } from "../_components/Nav";
 import { PageHero } from "../_components/PageHero";
 
 export const metadata: Metadata = {
-  title: "Contact CICANDA — Get in Touch",
+  title: "Contact CICANDA: Get in Touch",
   description:
     "Contact CICANDA Limited for IT services, Media & PR, or Reseller partnerships. Our team responds within one business day. Office hours: Mon–Fri, 09:00–18:00 WAT.",
   alternates: { canonical: "https://cicanda.com/contact" },
@@ -43,7 +43,7 @@ const faqs = [
   },
   {
     q: "What should I include in my first message?",
-    a: "A brief description of what you are working on, the service area you think is relevant (IT, Media & PR, or Reseller), and any timing constraints we should know about. You do not need a detailed brief to start — a few sentences is enough for us to respond meaningfully.",
+    a: "A brief description of what you are working on, the service area you think is relevant (IT, Media & PR, or Reseller), and any timing constraints we should know about. You do not need a detailed brief to start; a few sentences is enough for us to respond meaningfully.",
   },
 ];
 

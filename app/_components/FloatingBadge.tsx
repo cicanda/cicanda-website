@@ -135,7 +135,7 @@ export function FloatingBadge() {
       ref={ref}
       className={`floating-badge${snapping ? " is-snapping" : ""}`}
       role="note"
-      aria-label="ISO-aligned delivery — drag to reposition"
+      aria-label="ISO-aligned delivery. Drag to reposition"
       style={pos ? { left: pos.x, top: pos.y } : { visibility: "hidden" }}
       onPointerDown={onPointerDown}
       onPointerMove={onPointerMove}

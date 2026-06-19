@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Media & PR Services for Nigerian Organisations | CICANDA",
     description:
-      "Brand strategy, press relations, and creative content — built for credibility, not noise. CICANDA Media & PR, Abuja.",
+      "Brand strategy, press relations, and creative content built for credibility, not noise. CICANDA Media & PR, Abuja.",
     url: "https://cicanda.com/services/media-pr",
   },
 };
@@ -33,7 +33,7 @@ const breadcrumbSchema = {
 const faqs = [
   {
     q: "Do you place stories in Nigerian and international press?",
-    a: "Yes. We maintain relationships with journalists and editors across Nigerian national and regional titles, as well as relevant trade and international publications. Our approach is earned placement — we pitch stories that the press actually want to run, rather than relying on advertorial.",
+    a: "Yes. We maintain relationships with journalists and editors across Nigerian national and regional titles, as well as relevant trade and international publications. Our approach is earned placement; we pitch stories that the press actually want to run, rather than relying on advertorial.",
   },
   {
     q: "Can you run a launch campaign end-to-end?",
@@ -45,11 +45,11 @@ const faqs = [
   },
   {
     q: "What does brand strategy work look like in practice?",
-    a: "It typically begins with a review of your current positioning, competitive landscape, and audience perceptions. We then develop a clear brand narrative, key messages, and guidelines for how they are applied across channels — from press materials to social content to internal communications.",
+    a: "It typically begins with a review of your current positioning, competitive landscape, and audience perceptions. We then develop a clear brand narrative, key messages, and guidelines for how they are applied across channels: from press materials to social content to internal communications.",
   },
   {
     q: "Do you produce content in-house, or do you outsource?",
-    a: "We produce the majority of content in-house — copy, scripts, and creative direction. For photography and video production we work with a trusted network of local partners whose quality and briefability we stand behind.",
+    a: "We produce the majority of content in-house: copy, scripts, and creative direction. For photography and video production we work with a trusted network of local partners whose quality and briefability we stand behind.",
   },
 ];
 
@@ -72,7 +72,7 @@ export default function MediaPrPage() {
               <span style={{ color: "var(--c-blue-500)" }}>Steadier visibility.</span>
             </>
           }
-          lead="Brand strategy, press relations, and content production built on what your audience actually cares about — not what looks impressive in a pitch deck."
+          lead="Brand strategy, press relations, and content production built on what your audience actually cares about, not what looks impressive in a pitch deck."
         >
           <Link href="/contact" className="btn btn--white">
             Discuss your communications brief <IconArrow className="arrow" size={16} stroke={2.2} />
@@ -107,7 +107,7 @@ export default function MediaPrPage() {
                 </div>
                 <h3>Brand Strategy &amp; Corporate Communications</h3>
                 <p>
-                  A clear, honest account of who you are and why it matters —
+                  A clear, honest account of who you are and why it matters,
                   built to hold up under scrutiny and translate across every
                   channel. We develop positioning, key messages, and the
                   communications frameworks your team can actually use.
@@ -132,7 +132,7 @@ export default function MediaPrPage() {
                 <h3>Press Relations &amp; Media Placement</h3>
                 <p>
                   Earned coverage in the publications that matter to your
-                  audience — not spray-and-pray distribution. We pitch
+                  audience, not spray-and-pray distribution. We pitch
                   stories that journalists want to run, and we manage the
                   relationship so your organisation is a reliable source over
                   time.
@@ -158,7 +158,7 @@ export default function MediaPrPage() {
                 <p>
                   Content your audience reads rather than scrolls past.
                   We handle editorial planning, copy, creative direction, and
-                  channel management — with a consistent tone that reflects your
+                  channel management, with a consistent tone that reflects your
                   organisation rather than whatever is trending.
                 </p>
                 <ul className="feature-card__list">
