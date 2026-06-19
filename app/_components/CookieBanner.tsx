@@ -135,7 +135,7 @@ export function CookieBanner({ gaId }: { gaId: string }) {
           >
             <p className="cookie-banner__title">We use cookies</p>
             <p className="cookie-banner__body">
-              CICANDA uses cookies to keep the site working and — with your consent — to understand
+              CICANDA uses cookies to keep the site working and, with your consent, to understand
               how visitors use our site via Google Analytics. Necessary cookies are always active.{" "}
               <Link href="/legal/cookies">Cookie Policy</Link>
               {" · "}
@@ -221,7 +221,7 @@ export function CookieBanner({ gaId }: { gaId: string }) {
                   sub="Always active"
                   checked={true}
                   locked={true}
-                  description="Required for the site to function — page routing, security headers, and session integrity. No personal data is retained beyond your visit."
+                  description="Required for the site to function: page routing, security headers, and session integrity. No personal data is retained beyond your visit."
                 />
                 <CookieCategory
                   name="Analytics"
@@ -304,7 +304,7 @@ function CookieCategory({
         </div>
         <label
           className="cookie-toggle"
-          title={locked ? "Always active — cannot be disabled" : `Toggle ${name} cookies`}
+          title={locked ? "Always active (cannot be disabled)" : `Toggle ${name} cookies`}
         >
           <input
             type="checkbox"
