@@ -1,4 +1,6 @@
+import Link from "next/link";
 import { IconFB, IconIG, IconLI, IconX } from "./icons";
+import { CookieSettingsButton } from "./CookieSettingsButton";
 
 export function Footer() {
   return (
@@ -17,13 +19,13 @@ export function Footer() {
             <h5>Services</h5>
             <ul>
               <li>
-                <a href="#services">Information Technology</a>
+                <Link href="/services/information-technology">Information Technology</Link>
               </li>
               <li>
-                <a href="#services">Media &amp; PR</a>
+                <Link href="/services/media-pr">Media &amp; PR</Link>
               </li>
               <li>
-                <a href="#services">Reseller &amp; Partnerships</a>
+                <Link href="/services/reseller-partnerships">Reseller &amp; Partnerships</Link>
               </li>
             </ul>
           </div>
@@ -31,13 +33,33 @@ export function Footer() {
             <h5>Company</h5>
             <ul>
               <li>
-                <a href="#about">About</a>
+                <Link href="/about">About</Link>
               </li>
               <li>
-                <a href="#contact">Contact</a>
+                <Link href="/blog">Blog</Link>
               </li>
               <li>
-                <a href="#newsletter">Newsletter</a>
+                <Link href="/contact">Contact</Link>
+              </li>
+            </ul>
+          </div>
+          <div className="footer__col">
+            <h5>Legal</h5>
+            <ul>
+              <li>
+                <Link href="/legal/terms">Terms of Service</Link>
+              </li>
+              <li>
+                <Link href="/legal/privacy">Privacy Policy</Link>
+              </li>
+              <li>
+                <Link href="/legal/cookies">Cookie Policy</Link>
+              </li>
+              <li>
+                <Link href="/legal/data-protection">Data Protection</Link>
+              </li>
+              <li>
+                <CookieSettingsButton />
               </li>
             </ul>
           </div>

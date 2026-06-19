@@ -1,3 +1,9 @@
+"use client";
+import Link from "next/link";
+import { motion, useScroll, useTransform } from "motion/react";
+
+const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
+import { useRef } from "react";
 import { IconArrow } from "./icons";
 
 function DotMap() {
@@ -28,13 +34,62 @@ function DotMap() {
   );
 }
 
+const container = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.1, delayChildren: 0.05 } },
+};
+
+const item = {
+  hidden: { opacity: 0, y: 24 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.65, ease: EASE },
+  },
+};
+
+const slideRight = {
+  hidden: { opacity: 0, x: 48 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.75, ease: EASE, delay: 0.15 },
+  },
+};
+
 export function Hero() {
+  const heroRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ["start start", "end start"],
+  });
+  const bgY = useTransform(scrollYProgress, [0, 1], [0, 70]);
+
   return (
-    <section className="hero" id="top">
-      <div className="hero__bg">
-        <DotMap />
-        <span className="float-tri" style={{ top: "22%", left: "6%" }} />
-        <span
+    <motion.section
+      className="hero"
+      id="top"
+      ref={heroRef}
+      initial="hidden"
+      animate="visible"
+      variants={container}
+    >
+      {/* Parallax background */}
+      <motion.div className="hero__bg" style={{ y: bgY }}>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.2 }}
+        >
+          <DotMap />
+        </motion.div>
+        <motion.span
+          className="float-tri"
+          style={{ top: "22%", left: "6%" }}
+          animate={{ y: [0, -14, 0], rotate: [0, 6, 0] }}
+          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.span
           className="float-tri"
           style={{
             top: "70%",
@@ -42,35 +97,51 @@ export function Hero() {
             transform: "rotate(18deg)",
             opacity: 0.35,
           }}
+          animate={{ y: [0, 10, 0], rotate: [18, 26, 18] }}
+          transition={{
+            duration: 7.5,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 1.2,
+          }}
         />
-      </div>
+      </motion.div>
+
       <div className="container hero__inner">
+        {/* Left content — stagger via parent */}
         <div>
-          <span className="eyebrow">
+          <motion.span className="eyebrow" variants={item}>
             <span className="dot" />
             Now operating · Abuja, Nigeria
-          </span>
-          <h1>
+          </motion.span>
+
+          <motion.h1 variants={item}>
             Reliable solutions,
             <br />
             <span className="accent">delivered</span> with intent
             <span className="tri" />
-          </h1>
-          <div className="hero__tagline">&ldquo;creating reliable solutions.&rdquo;</div>
-          <p className="hero__lead">
+          </motion.h1>
+
+          <motion.div className="hero__tagline" variants={item}>
+            &ldquo;creating reliable solutions.&rdquo;
+          </motion.div>
+
+          <motion.p className="hero__lead" variants={item}>
             CICANDA is a Nigerian firm building dependable Information
             Technology, Media &amp; PR, and Reseller capability for
             organisations that need to move forward with confidence.
-          </p>
-          <div className="hero__ctas">
-            <a href="#contact" className="btn btn--primary">
+          </motion.p>
+
+          <motion.div className="hero__ctas" variants={item}>
+            <Link href="/contact" className="btn btn--primary">
               Get in touch <IconArrow className="arrow" />
-            </a>
-            <a href="#services" className="btn btn--ghost">
-              Explore services
-            </a>
-          </div>
-          <div className="hero__strip">
+            </Link>
+            <Link href="/about" className="btn btn--ghost">
+              About CICANDA
+            </Link>
+          </motion.div>
+
+          <motion.div className="hero__strip" variants={item}>
             <div className="hero__strip-item">
               <div className="k">3</div>
               <div className="v">Service lines</div>
@@ -83,28 +154,44 @@ export function Hero() {
             <div className="hero__strip-divider" />
             <div className="hero__strip-item">
               <div className="k">24/7</div>
-              <div className="v">Partner support</div>
+              <div className="v">Support</div>
             </div>
-          </div>
+          </motion.div>
         </div>
-        <div className="hero-visual" aria-hidden="true">
-          <div className="hero-card hero-card--main">
-            <div className="label">Live engagement</div>
-            <h3>
-              Building infrastructure for Nigeria&rsquo;s next chapter, quietly,
-              reliably, every day.
-            </h3>
-            <div className="meta">
-              <span>Abuja</span>
-              <span className="sep" />
-              <span>Lagos</span>
-              <span className="sep" />
-              <span>Zagreb</span>
+
+        {/* Right visual — slides in from right, then floats */}
+        <motion.div
+          className="hero-visual"
+          aria-hidden="true"
+          variants={slideRight}
+        >
+          <motion.div
+            animate={{ y: [0, -12, 0] }}
+            transition={{
+              duration: 5,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: 1,
+            }}
+          >
+            <div className="hero-card hero-card--main">
+              <div className="label">Live engagement</div>
+              <h3>
+                Building infrastructure for Nigeria&rsquo;s next chapter,
+                quietly, reliably, every day.
+              </h3>
+              <div className="meta">
+                <span>Abuja</span>
+                <span className="sep" />
+                <span>Lagos</span>
+                <span className="sep" />
+                <span>Zagreb</span>
+              </div>
             </div>
-          </div>
+          </motion.div>
           <span className="hero-tri" />
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 }

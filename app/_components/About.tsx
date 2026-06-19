@@ -1,4 +1,8 @@
+"use client";
+import { motion } from "motion/react";
 import type { ReactNode } from "react";
+
+const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
 import { IconGlobe, IconShield, IconSpark, IconUsers } from "./icons";
 
 type Pillar = {
@@ -30,12 +34,38 @@ const PILLARS: Pillar[] = [
   },
 ];
 
+const fadeUp = {
+  hidden: { opacity: 0, y: 28 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.65, ease: EASE },
+  },
+};
+
+const grid = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.14 } },
+};
+
+const pillarContainer = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.09 } },
+};
+
 export function About() {
   return (
     <section className="section section--soft" id="about">
       <div className="container">
-        <div className="about-grid">
-          <div>
+        <motion.div
+          className="about-grid"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+          variants={grid}
+        >
+          {/* Left — story */}
+          <motion.div variants={fadeUp}>
             <div className="section__kicker">About CICANDA</div>
             <h2 className="section__title">
               Built in Abuja for the work that has to{" "}
@@ -62,23 +92,25 @@ export function About() {
               wrote in a brand workshop. It&rsquo;s the brief we hold ourselves
               to on every engagement.
             </div>
-          </div>
-          <div>
+          </motion.div>
+
+          {/* Right — pillars */}
+          <motion.div variants={fadeUp}>
             <div className="section__kicker">Why CICANDA</div>
             <h3 style={{ fontSize: 22, marginBottom: 22 }}>
               Four pillars that show up in every brief.
             </h3>
-            <div className="pillars">
+            <motion.div className="pillars" variants={pillarContainer}>
               {PILLARS.map((p) => (
-                <div className="pillar" key={p.title}>
+                <motion.div className="pillar" key={p.title} variants={fadeUp}>
                   <div className="pillar__icon">{p.icon}</div>
                   <h4>{p.title}</h4>
                   <p>{p.body}</p>
-                </div>
+                </motion.div>
               ))}
-            </div>
-          </div>
-        </div>
+            </motion.div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );
