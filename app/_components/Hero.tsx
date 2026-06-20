@@ -48,14 +48,6 @@ const item = {
   },
 };
 
-const slideRight = {
-  hidden: { opacity: 0, x: 48 },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: { duration: 0.75, ease: EASE, delay: 0.15 },
-  },
-};
 
 export function Hero() {
   const heroRef = useRef<HTMLElement>(null);
@@ -116,7 +108,7 @@ export function Hero() {
           </motion.span>
 
           <motion.h1 variants={item}>
-            Reliable solutions,
+            <span style={{ whiteSpace: "nowrap" }}>Reliable solutions,</span>
             <br />
             <span className="accent">delivered</span> with intent
             <span className="tri" />
@@ -163,9 +155,13 @@ export function Hero() {
         <motion.div
           className="hero-visual"
           aria-hidden="true"
-          variants={slideRight}
+          initial={{ opacity: 0, y: 32 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.75, ease: EASE, delay: 0.15 }}
         >
+          {/* Main engagement card */}
           <motion.div
+            style={{ position: "absolute", inset: 0 }}
             animate={{ y: [0, -12, 0] }}
             transition={{
               duration: 5,
@@ -189,6 +185,7 @@ export function Hero() {
               </div>
             </div>
           </motion.div>
+
           <span className="hero-tri" />
         </motion.div>
       </div>

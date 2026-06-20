@@ -239,7 +239,7 @@ p { margin: 0; line-height: 1.6; color: var(--c-ink-2); text-wrap: pretty; }
 }
 .eyebrow .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--c-orange); }
 .hero h1 {
-  font-size: clamp(44px, 6.2vw, 78px);
+  font-size: clamp(40px, 5.2vw, 66px);
   line-height: 0.98;
   margin: 22px 0 22px;
   letter-spacing: -0.035em;
@@ -335,6 +335,7 @@ p { margin: 0; line-height: 1.6; color: var(--c-ink-2); text-wrap: pretty; }
 /* Hero visual */
 .hero-visual {
   position: relative;
+  width: 100%;
   aspect-ratio: 1 / 1.06;
   max-width: 460px;
   margin-left: auto;
@@ -870,8 +871,13 @@ p { margin: 0; line-height: 1.6; color: var(--c-ink-2); text-wrap: pretty; }
   .hero__strip-item .k { font-size: 18px; }
   .hero__strip-item .v { font-size: 11px; }
   .hero__strip-divider { height: 26px; }
-  .hero-visual { display: none; }
+  section#top.hero { padding-bottom: 0; }
+  .hero-visual { display: block; max-width: 100%; min-height: 300px; }
   .float-tri { display: none; }
+  .hero-card--main { padding: 16px; }
+  .hero-card--main .label { margin-bottom: 14px; font-size: 10px; }
+  .hero-card--main h3 { font-size: 16px; margin-bottom: 12px; }
+  .hero-card--main .meta { font-size: 12px; gap: 10px; }
   .floating-badge { display: none; }
   .pillars { grid-template-columns: 1fr; }
   .field__row { grid-template-columns: 1fr; }
