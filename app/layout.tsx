@@ -60,7 +60,7 @@ export const metadata: Metadata = {
   },
   alternates: { canonical: SITE_URL },
   verification: {
-    google: process.env.NEXT_PUBLIC_GSC_VERIFICATION ?? "",
+    google: "fjfwAER6wDOswnsVyur9LIkiQcTpE-AfTOaALwLFOHY",
   },
   robots: {
     index: true,
