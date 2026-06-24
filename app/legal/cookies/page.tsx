@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { makeBreadcrumbSchema } from "../../_lib/schema";
 import { Footer } from "../../_components/Footer";
 import { JsonLd } from "../../_components/JsonLd";
 import { Nav } from "../../_components/Nav";
@@ -12,15 +13,11 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://cicanda.com/legal/cookies" },
 };
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://cicanda.com" },
-    { "@type": "ListItem", position: 2, name: "Legal", item: "https://cicanda.com/legal/cookies" },
-    { "@type": "ListItem", position: 3, name: "Cookie Policy", item: "https://cicanda.com/legal/cookies" },
-  ],
-};
+const breadcrumbSchema = makeBreadcrumbSchema([
+  { name: "Home", item: "https://cicanda.com" },
+  { name: "Legal", item: "https://cicanda.com/legal/cookies" },
+  { name: "Cookie Policy", item: "https://cicanda.com/legal/cookies" },
+]);
 
 export default function CookiesPage() {
   return (

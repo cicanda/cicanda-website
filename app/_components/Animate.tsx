@@ -42,28 +42,6 @@ export function FadeUp({
   );
 }
 
-export function FadeIn({
-  children,
-  className,
-  delay = 0,
-}: {
-  children: ReactNode;
-  className?: string;
-  delay?: number;
-}) {
-  return (
-    <motion.div
-      className={className}
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, delay }}
-    >
-      {children}
-    </motion.div>
-  );
-}
-
 export function Stagger({
   children,
   className,

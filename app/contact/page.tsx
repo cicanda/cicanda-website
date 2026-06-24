@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { makeBreadcrumbSchema } from "../_lib/schema";
 import { Contact } from "../_components/Contact";
 import { FaqSection } from "../_components/FaqSection";
 import { Footer } from "../_components/Footer";
@@ -19,14 +20,10 @@ export const metadata: Metadata = {
   },
 };
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://cicanda.com" },
-    { "@type": "ListItem", position: 2, name: "Contact", item: "https://cicanda.com/contact" },
-  ],
-};
+const breadcrumbSchema = makeBreadcrumbSchema([
+  { name: "Home", item: "https://cicanda.com" },
+  { name: "Contact", item: "https://cicanda.com/contact" },
+]);
 
 const faqs = [
   {

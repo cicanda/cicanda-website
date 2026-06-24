@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { makeBreadcrumbSchema } from "../_lib/schema";
 import { FadeUp, Stagger, StaggerItem } from "../_components/Animate";
 import { Footer } from "../_components/Footer";
 import {
@@ -30,14 +31,10 @@ export const metadata: Metadata = {
   },
 };
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://cicanda.com" },
-    { "@type": "ListItem", position: 2, name: "Services", item: "https://cicanda.com/services" },
-  ],
-};
+const breadcrumbSchema = makeBreadcrumbSchema([
+  { name: "Home", item: "https://cicanda.com" },
+  { name: "Services", item: "https://cicanda.com/services" },
+]);
 
 const LINES = [
   {

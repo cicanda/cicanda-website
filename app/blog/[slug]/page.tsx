@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { makeBreadcrumbSchema } from "../../_lib/schema";
 import { notFound } from "next/navigation";
 import fs from "fs";
 import path from "path";
@@ -93,15 +94,11 @@ export default async function BlogPostPage({ params }: Props) {
     mainEntityOfPage: { "@type": "WebPage", "@id": `https://cicanda.com/blog/${slug}` },
   };
 
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://cicanda.com" },
-      { "@type": "ListItem", position: 2, name: "Blog", item: "https://cicanda.com/blog" },
-      { "@type": "ListItem", position: 3, name: data.title, item: `https://cicanda.com/blog/${slug}` },
-    ],
-  };
+  const breadcrumbSchema = makeBreadcrumbSchema([
+    { name: "Home", item: "https://cicanda.com" },
+    { name: "Blog", item: "https://cicanda.com/blog" },
+    { name: data.title, item: `https://cicanda.com/blog/${slug}` },
+  ]);
 
   const otherSlugs = getAllSlugs().filter((s) => s !== slug);
 

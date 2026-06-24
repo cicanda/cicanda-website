@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { makeBreadcrumbSchema } from "../_lib/schema";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
@@ -23,14 +24,10 @@ export const metadata: Metadata = {
   },
 };
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Home", item: "https://cicanda.com" },
-    { "@type": "ListItem", position: 2, name: "Blog", item: "https://cicanda.com/blog" },
-  ],
-};
+const breadcrumbSchema = makeBreadcrumbSchema([
+  { name: "Home", item: "https://cicanda.com" },
+  { name: "Blog", item: "https://cicanda.com/blog" },
+]);
 
 
 function getPosts(): PostMeta[] {
